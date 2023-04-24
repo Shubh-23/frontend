@@ -1,0 +1,33 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <app-header></app-header>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <div class="container mt-5">
+            <table class="table mt-3">
+                <thead>
+                    <th>id</th>
+                    <th>Type Of loan</th>
+                    <th >Rate Of Interest</th>
+                    
+                    <th></th>                                                                          
+                </thead>
+                <tbody>    
+                <tr *ngFor="let data of users ;let i = index ">
+                    <td>{{i+1}}</td>
+                    <td >{{data.loan_type}}</td>
+                    <td>{{data.interest_rate}}%</td>
+                    <button (click)="applyLoan(data)" class="btn btn-info">Apply Loan</button>
+                    
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>

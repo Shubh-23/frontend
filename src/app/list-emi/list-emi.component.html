@@ -1,0 +1,52 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <app-header></app-header>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <div class="mt-5" >
+
+<div class="container mt-5">
+    <h2>List of Data</h2>
+    <hr>
+    <div style="text-align: right;">
+        <!-- <button (click)="clickAddUser()" class="btn btn-success btn lg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button> -->
+    </div>
+<table class="table mt-3">
+    <thead>
+        <th>id</th>
+        <th>Date</th>
+        <th>EMI</th>
+        <th>MOI</th>
+        <th>Pay</th>
+        <th>R Amount</th>
+        <th>RC Amount</th>
+                                                                                   
+    </thead>
+    <tbody>    
+    <tr *ngFor="let data of newArr | paginate:{itemsPerPage: 7, currentPage:p};let i = index">
+        <td>{{i+1}}</td>
+        <td>{{data.Pay_date}}</td>
+        <td>{{data.SIP}}</td>
+        <td>{{data.MOI}}</td>
+        <td><button type="button" (click)=editUserdata(data) class="btn btn-info">Pay</button></td>
+        <td>{{data.loanAmount}} </td>
+        <td>{{data.RAmount}}</td>
+        
+        <!-- <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)=editUserdata(data) class="btn btn-info">Edit</button></td> -->
+        <!-- <td><button (click)="DeleteSweetAlert(data)" class="btn btn-danger">Delete</button></td> -->
+    </tr>
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+</div>
+
+        </div>
+    </div>

@@ -1,0 +1,68 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <app-header></app-header>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <div class="mt-5" >
+            <h2 >You are applying for {{data2 | uppercase}} loan</h2><br>
+
+            <form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)">
+            <div class="row col-md-12">
+              
+                  <div class="row col-md-3" >
+                    <div class="col-md-4" align="right">
+                        <label for="fname">Amount:</label>
+                    </div>
+                    <div class="col-md-8" align="left">
+                        <input type="text" name="amount" placeholder="amount" ngModel>
+                    </div>
+                </div>
+                <div class="row col-md-3" >
+                    <div class="col-md-4" align="right">
+                        <label for="fname">ROI:</label>
+                    </div>
+                    <div class="col-md-8" align="left">
+                        <input type="text" name="rate" placeholder="{{rate}}%" disabled ngModel>
+                    </div>
+                </div>
+                <div class="row col-md-3" >
+                    <div class="col-md-6" align="right">
+                        <label for="fname">Year:</label>
+                    </div>
+                    <div class="col-md-6" align="left">
+                       <input type="text" name="year" placeholder="year" ngModel>
+                    </div> 
+                </div>
+                <div class="row col-md-3" >
+                    <div class="col-md-4" align="right">
+                       
+                    </div>
+                    <div class="col-md-8" align="left">
+                        <input type="submit" value="submit"> 
+                    </div>
+                </div>
+            
+            </div>
+        </form><br><br><br><br>
+        <div *ngIf="showAdd">
+        <hr>
+        <hr>
+        <h1>Here is your Loan Calculation</h1><br><br>
+        
+            <h6>Amount :{{Amount}}</h6>
+            <h6>ROI : {{rate}}%</h6>
+            <h6>Duration : {{Year}} year</h6>
+            <h6>Interest : {{SI}}</h6>
+            <h6>EMI  :  {{SIP1}}</h6>
+            <h6>Total Amount : {{TotalAmount}}</h6><br>
+
+            <button (click)="ApplyLoan()">Apply for Loan</button>
+          </div>
+        </div>
+    </div>

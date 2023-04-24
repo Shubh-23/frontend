@@ -1,0 +1,9 @@
+{
+
+    "/User/GetAllUsers":{
+        "target":"http://deployment.inwizards.com:8080",
+        "secure":false
+    }
+
+}
+

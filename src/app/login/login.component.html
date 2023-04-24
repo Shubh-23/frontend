@@ -1,0 +1,27 @@
+<div class="main_login">
+        <div class="loginBox">
+            <div class="hedding_logn">
+                <h4>Login</h4>
+                <p>Please login to your account</p>
+              </div>
+<!-- <div class="container" style="max-width: 600px;background-color: beige;"> -->
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+     <small class="text-danger">{{msg}}</small>
+        <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="user.email">
+
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control"  placeholder="Enter password" name="password" [(ngModel)]="user.password">
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div>
+      <button  type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
+      <button (click)="getRegistration()" class="btn btn-info mr-1">register</button>
+    </form>
+</div>
+</div>
+  

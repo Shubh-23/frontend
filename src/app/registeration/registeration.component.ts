@@ -18,9 +18,14 @@ export class RegisterationComponent implements OnInit {
     this.router.navigate([''])
   }
 
-  RegisterUser(data){
-    console.log(data)
-    this.service.RegisterUserData(data)
+  RegisterUser(){
+    console.log(this.user);
+    
+    // console.log(data)
+    this.service.RegisterUserData(this.user).subscribe(res=>{
+      // console.log();
+      
+    })
   }
 
 }

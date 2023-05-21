@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     
 
     this.service.loginData(this.user).subscribe(res=>{
+      console.log(res);
       
       if(res.ErrorCode == 200){
       localStorage.setItem('id',res.Data.id)

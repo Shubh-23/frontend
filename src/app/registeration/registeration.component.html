@@ -4,7 +4,7 @@
             <h4>Register</h4>
             <p>Please Register to your account</p>
         </div>
-        <form #RegisterForm="ngForm" (ngSubmit)="RegisterUser(RegisterForm.value)">
+        <form >
             <small class="text-danger">{{msg}}</small>
             <div class="form-group">
                 <label for="email">Name:</label>
@@ -23,7 +23,7 @@
             <div class="checkbox">
                 <label><input type="checkbox" name="remember"> Remember me</label>
             </div>
-            <button (click)="getLogin()" type="button" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="getLogin()" (click)="RegisterUser()" type="button" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;
             <button (click)="getLogin()" class="btn btn-info mr-1">Login</button>
         </form>
     </div>

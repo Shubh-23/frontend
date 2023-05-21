@@ -7,19 +7,23 @@ import { map } from 'rxjs/operators'
 })
 export class RegistrationService {
 
-  baseUrl = "http://localhost:8081"
+  // baseUrl = "http://localhost:8081"
+  baseUrl ="https://loanmanagments.onrender.com"
+
+
   constructor(private http:HttpClient) { }
 
+  RegisterUserData(data){
+    console.log("data",data)
+    return this.http.post<any>(`${this.baseUrl}/user/registration`,data)
+    
+  }
   //login
   loginData(data){
     return this.http.post<any>(`${this.baseUrl}/user/login`,data)
     
   }
-
-  RegisterUserData(data){
-    console.log(data)
-    return this.http.post<any>(`${this.baseUrl}/user/registration`,data)
-  }
+  
 
 
   // getUserlist1(userdata:any){
@@ -79,7 +83,7 @@ export class RegistrationService {
 
   //get API of registration
   registration(){
-    return this.http.get<any>('/User/GetAllUsers')
+    return this.http.get<any>(`${this.baseUrl}/User/GetAllUsers`)
     .pipe(map((res:any)=>{
       return res
     }))
@@ -89,7 +93,7 @@ export class RegistrationService {
   updateUser(data:any,userId:any){
     console.log(data)
 
-    return this.http.post<any>('/User/GetAllUsers',data)
+    return this.http.post<any>(`${this.baseUrl}/User/GetAllUsers`,data)
   }
 
     
